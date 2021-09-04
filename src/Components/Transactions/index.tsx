@@ -105,7 +105,7 @@ const Transactions = (props: Props) => {
           isIdentity={props.endpoint === "identity"}
         />
       ) : <CircularProgress disableShrink />}
-      {error != null && <Error error={error} />}
+      {/* {error != null && <Error error={error} />} */}
     </>
   );
 };
