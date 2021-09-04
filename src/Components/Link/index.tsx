@@ -69,7 +69,7 @@ const Link = () => {
 
   return (
     <Button type="button" large onClick={() => open()} disabled={!ready}>
-      Get Start !!!
+      Get Started
     </Button>
   );
 };

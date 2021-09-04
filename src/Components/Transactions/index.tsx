@@ -39,17 +39,11 @@ const Transactions = (props: Props) => {
     
     let result = props.transformData(data)
     result.map((item:any,index:any)=>{
-      let rounded:any,balance:any
-
-      let amount:Number
-
-      // amount = parseFloat(item.amount.split(" ")[1])
-
-      rounded = Math.ceil(item.amount.split(" ")[1].replace( ',', '')) + " " + item.amount.split(" ")[2]
+      let balance:any
 
       balance = '+ ' + (Math.ceil(item.amount.split(" ")[1].replace( ',', '')) - item.amount.split(" ")[1].replace( ',', '')).toFixed(2)
       
-      result[index] = {...result[index],total:rounded,sats:balance} 
+      result[index] = {...result[index],sats:balance} 
       
     })
     setTransformedData(result); // transform data into proper format for each individual product

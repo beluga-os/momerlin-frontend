@@ -38,7 +38,7 @@ interface TransactionsDataItem {
   amount: string;
   date: string;
   name: string;
-  total: string;
+  merchand_name: string;
   sats: string;
 }
 
@@ -134,6 +134,9 @@ export const authCategories: Array<Categories> = [
 
 export const transactionsCategories: Array<Categories> = [
   {
+    title: "Date",
+    field: "date",
+  },{
     title: "Name",
     field: "name",
   },
@@ -146,13 +149,9 @@ export const transactionsCategories: Array<Categories> = [
     field: "sats",
   },
   {
-    title: "Total",
-    field: "total",
-  },
-  {
-    title: "Date",
-    field: "date",
-  },
+    title: "Merchand Name",
+    field: "merchand_name",
+  }
 ];
 
 export const identityCategories: Array<Categories> = [
@@ -333,11 +332,11 @@ export const transformTransactionsData = (
 ): Array<DataItem> => {
   return data.transactions!.map((t) => {
     const item: DataItem = {
+      date: t.date,
       name: t.name!,
       amount: formatCurrency(t.amount!, t.iso_currency_code),
       sats:'',
-      total: '',
-      date: t.date
+      merchand_name:t.merchant_name!
     };
     return item;
   });
