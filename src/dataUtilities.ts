@@ -149,7 +149,7 @@ export const transactionsCategories: Array<Categories> = [
     field: "sats",
   },
   {
-    title: "Merchand Name",
+    title: "Merchand",
     field: "merchand_name",
   }
 ];
